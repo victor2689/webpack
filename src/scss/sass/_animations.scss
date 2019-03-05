@@ -1,0 +1,60 @@
+
+/* Inicio Ripple Out */
+@keyframes ani-ripple-out {
+    0% {
+        opacity: 1;
+    }
+	100% {
+		top: -(6px + 6px);
+		right: -(6px + 6px);
+		bottom: -(6px + 6px);
+		left: -(6px + 6px);
+		opacity: 0;
+	}
+}
+
+@mixin ani-rippleout {
+	$outerBorderWidth: 6px;
+	$innerBorderWidth: 6px;
+
+	transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    display: inline-block;
+    vertical-align: middle;
+    
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		border: #909090 solid $outerBorderWidth;
+		top: 0;
+		right: 0;
+		bottom: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+		animation-duration: 1s;
+	}
+
+	&:hover:before,
+	&:focus:before,
+	&:active:before {
+		animation-name: ani-ripple-out;
+	}
+}
+/* Fin Ripple Out */
+
+@keyframes panDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-5%);
+        transform: translateY(-5%)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        visibility: visible
+    }
+}

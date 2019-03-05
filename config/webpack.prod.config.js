@@ -25,7 +25,10 @@ const prodConfiguration = env => {
         minimizer: [new UglifyJsPlugin()],
       },
       plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+          filename: "./css/[name].css",
+          chunkFilename: "./css/[name].min.css"
+        }),
         new OptimizeCssAssetsPlugin(),
         new Visualizer({ filename: './statistics.html' })
       ],

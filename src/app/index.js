@@ -1,12 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const App = () => {
-  return (
-    <div>
-      <img src="/dist/images/login-register.jpg" />
-    </div>
-  );
-};
-
+import '../scss/Main.scss';
+import App from './App';
 ReactDOM.render(<App />, document.getElementById('app'));
+
